@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input id="btap1" type="button" value="Bai Tap 1 !" onclick="btap1()"/><br/>
+<input id="btap2" type="button" value="Bai Tap 2 !" onclick="btap2()"/><br/>
+<input id="btap3" type="button" value="Bai Tap 3 !" onclick="btap3()"/><br/>
+<input id="btap4" type="button" value="Bai Tap 4 !" onclick="btap4()"/><br/>
+<input id="btap5" type="button" value="Bai Tap 5 !" onclick="btap5()"/><br/>
+
+<div id="showMessage"></div>
+
+<script>
+    let showDiv = document.getElementById('showMessage');
+    let sevenName = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let sevenStar = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function btap5() {
+        let inputName = prompt('','');
+
+        showDiv.innerHTML = findStar(inputName);
+    }
+
+    function findStar(name) {
+        let mess = 'ko tim thay';
+
+        for (i = 0; i < sevenName.length; i++) {
+            if (name == sevenName[i]) {
+                mess = sevenStar[i];
+                break;
+            }
+        }
+
+        return mess;
+    }
+
+    function btap4() {
+        result = 0;
+        alert(result);
+        result = addNumbers();
+        alert(result);
+    }
+    
+    function addNumbers() {
+        firstNum = 4;
+        secondNum = 8;
+        result = firstNum + secondNum;
+        return result;
+    }
+
+    function btap3() {
+        let numA = parseInt(prompt('',0));
+        let numB = parseInt(prompt('',0));
+
+        showDiv.innerHTML = sosanh2so(numA,numB);
+    }
+
+    function sosanh2so(a,b) {
+        if(a<=b){
+            return parseInt(a)+parseInt(b);
+        }else{
+            return a+' lon hon '+b;
+        }
+    }
+    
+    function btap2() {
+        let inputNum = parseInt(prompt('',0));
+        showDiv.innerHTML = upOne(inputNum);
+    }
+    
+    function upOne(num) {
+        num = parseInt(num) + 1;
+        return num;
+    }
+    
+    function btap1() {
+        alert(alertMessage());
+    }
+    
+    function alertMessage() {
+        return "Xin chao";
+    }
+</script>
+
+</body>
+</html>
